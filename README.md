@@ -8,6 +8,10 @@
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 
+## Snapshots
+![alt text](public/snapshot1.png)
+![alt text](public/snapshot.png)
+
 ## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/)
 

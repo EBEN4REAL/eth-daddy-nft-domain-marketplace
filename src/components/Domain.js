@@ -22,7 +22,8 @@ const Domain = ({ domain, ethDaddy, provider, id }) => {
 
   useEffect(() => {
     getOwner()
-  }, [getOwner, hasSold])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasSold])
 
   return (
     <div className='card'>

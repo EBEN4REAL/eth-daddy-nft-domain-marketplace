@@ -1,5 +1,18 @@
 # ETH Daddy 
 
+ETH Daddy is a lightweight, ENS-style domain marketplace dApp. It showcases a full stack Web3 flow—Solidity smart contracts (listing and purchasing domains), Hardhat for local development/testing, and a React frontend powered by Ethers for on-chain reads/writes. The deploy script seeds example domains (e.g., jack.eth, john.eth) with prices, and the UI lets users connect a wallet, browse available domains, and buy them with ETH. Ownership and listings are recorded on-chain, making this a solid reference for learning contract interactions, provider/network handling, and building a simple marketplace experience.
+
+Features
+On-chain registry and marketplace for human-readable .eth-style domains
+
+Pre-seeded sample listings via deploy script for quick demos
+
+Wallet connect, network detection, and live contract reads (e.g., supply, domain data)
+
+Example tests and local workflow with Hardhat
+
+Note: This project is a learning/demo implementation and not affiliated with ENS.
+
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contracts & Tests)

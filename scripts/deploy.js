@@ -4,11 +4,6 @@ const { parseUnits } = require("ethers");
 const tokens = (n) => parseUnits(n.toString(), "ether");
 
 async function main() {
-
-  const artifact = await hre.artifacts.readArtifact("ETHDaddy"); // contract name
-  const abi = artifact.abi;
-  console.log(abi);
-  
   const [deployer] = await hre.ethers.getSigners();
 
   const ETHDaddy = await hre.ethers.getContractFactory("ETHDaddy");

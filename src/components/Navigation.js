@@ -1,6 +1,5 @@
 import { ethers } from "ethers";
 import logo from "../assets/logo.svg";
-import { Button, Drawer } from "antd";
 
 const Navigation = ({ account, setAccount }) => {
   const connectHandler = async () => {

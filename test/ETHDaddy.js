@@ -63,7 +63,7 @@ describe("ETHDaddy", () => {
 
   describe("Minting", () => {
     const ID = 1
-    const AMOUNT = ethers.utils.parseUnits("10", 'ether')
+    const AMOUNT = ethers.parseUnits("10", 'ether')
 
     beforeEach(async () => {
       const transaction = await ethDaddy.connect(owner1).mint(ID, { value: AMOUNT })
@@ -88,7 +88,7 @@ describe("ETHDaddy", () => {
 
   describe("Withdrawing", () => {
     const ID = 1
-    const AMOUNT = ethers.utils.parseUnits("10", 'ether')
+    const AMOUNT = ethers.parseUnits("10", 'ether')
     let balanceBefore
 
     beforeEach(async () => {

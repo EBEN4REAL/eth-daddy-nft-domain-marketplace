@@ -67,7 +67,6 @@ function App() {
     // 6) Read maxSupply and then fetch domains
     const maxSupplyBig = await contract.maxSupply(); // bigint
     const maxSupply = Number(maxSupplyBig);
-    console.log("maxSupply:", maxSupply);
 
     const items = [];
     for (let i = 1; i <= maxSupply; i++) {

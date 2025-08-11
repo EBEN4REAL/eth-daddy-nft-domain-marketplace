@@ -76,21 +76,16 @@ nav {
 }
 
 .nav__connect {
-  width: 175px;
-  height: 50px;
-  margin: 0 75px 0 auto;
-
-  background-color: var(--clr-black);
-  color: var(--clr-white);
-
-  border: none;
-
-  font-family: "Open Sans";
-  font-size: 1.1em;
-  font-weight: 600;
-
-  cursor: pointer;
-  transition: all 250ms ease;
+    margin: 0 75px 0 auto;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    border: none;
+    font-family: "Open Sans";
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 250ms ease;
+    padding: 10px 20px;
 }
 
 .nav__connect:hover {
@@ -109,6 +104,7 @@ header {
   min-height: 50vh;
 
   position: relative;
+  padding: 20px;
 }
 
 .header__subtitle,
@@ -118,8 +114,7 @@ header {
 }
 
 .header__subtitle {
-  margin: 0 0 25px 75px;
-  padding-top: 100px;
+  padding-top: 15px;
 
   font-family: "Open Sans";
   font-size: 1em;
@@ -128,8 +123,6 @@ header {
 }
 
 .header__title {
-  margin: 0 0 25px 75px;
-
   font-family: "Merriweather";
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
@@ -147,8 +140,24 @@ header {
   border: none;
 }
 
+.app-input { 
+  height: 60px;
+  padding: 0 20px;
+  min-width: 30%;
+  border: none;
+  border: 1px solid var(--clr-black);
+  width: 100%;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 .header__button {
-  width: 125px;
   height: 60px;
 
   background-color: var(--clr-black);
@@ -270,6 +279,11 @@ header {
   transition: all 250ms ease;
 }
 
+.d-flex {
+  display: flex;
+  /* align-items: center; */
+}
+
 header {
   padding: 50px 75px;
 }
@@ -313,15 +327,15 @@ header {
   }
 
   header {
-    padding: 0px;
+    padding: 20px;
   }
 
   .header__subtitle {
-    margin: 0 0 30px 11px;
+    margin: 0 0 15px 11px;
   }
 
   .header__title {
-    margin: 0 0 30px 11px;
+    margin: 0 0 30px 1px;
   }
 
   .header__input{

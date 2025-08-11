@@ -9,11 +9,6 @@ import Domain from "./components/Domain";
 // ABIs
 import ETHDaddyArtifact from "./abis/ETHDaddy.json"; // artifact with { abi, bytecode, ... }
 
-// Config shape expected:
-// {
-//   "11155111": { "ETHDaddy": { "address": "0x..." } },
-//   "31337":    { "ETHDaddy": { "address": "0x..." } }
-// }
 import config from "./config.json";
 
 function App() {
@@ -30,7 +25,9 @@ function App() {
 
     // Optional: request accounts so MetaMask is connected
     try {
-      const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+      const accounts = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
       if (accounts?.length) setAccount(getAddress(accounts[0]));
     } catch {}
 
@@ -49,7 +46,9 @@ function App() {
     // 3) Make sure there's code at the address on this chain
     const code = await provider.getCode(address);
     if (code === "0x") {
-      throw new Error(`No contract found at ${address} on chain ${chainId}. Check your address & network.`);
+      throw new Error(
+        `No contract found at ${address} on chain ${chainId}. Check your address & network.`
+      );
     }
 
     // 4) Build contract with the ABI array (not the whole artifact)
@@ -61,7 +60,9 @@ function App() {
     try {
       contract.interface.getFunction("maxSupply");
     } catch {
-      throw new Error("ABI/function mismatch: 'maxSupply()' not found. Does the contract actually expose it?");
+      throw new Error(
+        "ABI/function mismatch: 'maxSupply()' not found. Does the contract actually expose it?"
+      );
     }
 
     // 6) Read maxSupply and then fetch domains
@@ -84,7 +85,8 @@ function App() {
     window.ethereum.on("accountsChanged", onAccountsChanged);
 
     // optional cleanup when component unmounts
-    return () => window.ethereum?.removeListener?.("accountsChanged", onAccountsChanged);
+    return () =>
+      window.ethereum?.removeListener?.("accountsChanged", onAccountsChanged);
   };
 
   useEffect(() => {
@@ -99,13 +101,13 @@ function App() {
     <div>
       <Navigation account={account} setAccount={setAccount} />
 
-      <Search />
+      <Search ethDaddy={ethDaddy} provider={provider} />
 
       <div className="cards__section">
         <h2 className="cards__title">Why you need a domain name.</h2>
         <p className="cards__description">
-          Own your custom username, use it across services, and be able to store an
-          avatar and other profile data.
+          Own your custom username, use it across services, and be able to store
+          an avatar and other profile data.
         </p>
 
         <hr />

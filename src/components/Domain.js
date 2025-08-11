@@ -41,8 +41,8 @@ function shorten(addr) {
 const Domain = ({ id, domain, ethDaddy, provider, account }) => {
   const [owner, setOwner] = useState(null);
   const [pending, setPending] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isLister, setIsLister] = useState(false);
+  const [, setIsAdmin] = useState(false);
+  const [, setIsLister] = useState(false);
 
   // Set Price modal
   const [priceOpen, setPriceOpen] = useState(false);
@@ -93,6 +93,7 @@ const Domain = ({ id, domain, ethDaddy, provider, account }) => {
   useEffect(() => {
     refreshOwner();
     refreshAccess();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ethDaddy, id, domain.isOwned, domain.lister, account]); // eslint-ok
 
   // ---- Handlers ----

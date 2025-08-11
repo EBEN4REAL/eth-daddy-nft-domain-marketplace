@@ -22,7 +22,7 @@ const Domain = ({ domain, ethDaddy, provider, id }) => {
 
   useEffect(() => {
     getOwner()
-  }, [hasSold])
+  }, [getOwner, hasSold])
 
   return (
     <div className='card'>

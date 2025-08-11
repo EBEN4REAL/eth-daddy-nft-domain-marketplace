@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import logo from "../assets/logo.svg";
+import ActionButton from "./ui/ActionButton/ActionButton";
 
 const Navigation = ({ account, setAccount }) => {
   const connectHandler = async () => {
@@ -31,17 +32,16 @@ const Navigation = ({ account, setAccount }) => {
 
       <div className="d-flex">
         {account ? (
-          <button type="button" className="nav__connect">
+          <ActionButton type="button">
             {account.slice(0, 6) + "..." + account.slice(38, 42)}
-          </button>
+          </ActionButton>
         ) : (
-          <button
+          <ActionButton
             type="button"
-            className="nav__connect"
             onClick={connectHandler}
           >
             Connect
-          </button>
+          </ActionButton>
         )}
       </div>
     </nav>

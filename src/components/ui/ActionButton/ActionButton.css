@@ -1,0 +1,36 @@
+/* Make Ant Card actions look clean */
+:where(.ant-card) .ant-card-actions > li:not(:last-child) {
+  border-inline-end: none;
+}
+
+/* Uniform dark button */
+.action-btn {
+  background: #1f1f1f !important;
+  border-color: #1f1f1f !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 8px;
+}
+.action-btn:hover,
+.action-btn:focus {
+  background: #141414 !important;
+  border-color: #141414 !important;
+  color: #ffffff !important;
+}
+
+/* Danger variant (still white text on dark red) */
+.action-btn--danger {
+  background: #991b1b !important;   /* dark red */
+  border-color: #991b1b !important;
+}
+.action-btn--danger:hover,
+.action-btn--danger:focus {
+  background: #7f1d1d !important;
+  border-color: #7f1d1d !important;
+}
+
+/* Make buttons breathe inside Card actions */
+:where(.ant-card) .ant-card-actions .action-btn {
+  width: calc(100% - 16px);
+  margin: 8px;
+}

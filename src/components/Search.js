@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Drawer, message } from "antd";
 import { ethers } from "ethers";
+import ActionButton from "./ui/ActionButton/ActionButton";
 
 const Search = ({ ethDaddy, provider }) => {
   const [open, setOpen] = useState(false);
@@ -48,9 +49,9 @@ const Search = ({ ethDaddy, provider }) => {
     <header>
       <h2 className="header__title">It all begins with a domain name.</h2>
       <p className="header__subtitle">You can list your domain here</p>
-      <button type="button" className="nav__connect mt-30" onClick={showDrawer}>
+      <ActionButton type="button" className="mt-30" onClick={showDrawer}>
         List domain
-      </button>
+      </ActionButton>
 
       <Drawer title="List Domain" closable onClose={onClose} open={open}>
         <div>

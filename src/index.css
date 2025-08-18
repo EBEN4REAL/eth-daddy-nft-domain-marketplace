@@ -11,13 +11,53 @@
   --clr-black: #202020;
   --clr-grey: #c4c4c4;
   --clr-grey-2: #8f8f8f;
+
+  --text-heading: #f1f1f1;
+  --text-body:    #d1d1d1;
+  --text-muted:   #9a9a9a;
+  --text-accent:  #8b5cf6;
 }
 
+h1, h2, h3 { color: var(--text-heading); }
+p, span, li { color: var(--text-body); }
+small, .subtitle { color: var(--text-muted); }
+a { color: var(--text-accent); }
+
+/* Base dark background */
 body {
-  margin: 0;
-  font-family: "Open Sans";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #0c0c0d;              /* deep black */
+  color: #f2f2f2;                   /* soft off-white text */
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Subtle radial glow background effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(148, 62, 255, 0.3), transparent 60%),    /* violet */
+    radial-gradient(circle at 70% 80%, rgba(255, 62, 177, 0.3), transparent 60%);    /* hot pink */
+  z-index: -1;
+  filter: blur(80px);
+}
+
+
+/* Optional inner container with glass/glow */
+.glass-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  box-shadow:
+          0 0 20px rgba(139,92,246,0.3),
+          0 0 40px rgba(139,92,246,0.15);
+  padding: 2rem;
+}
+
+.text-white {
+  color: var(--clr-white);
 }
 
 /* ------------------------------------------------------ */
@@ -45,8 +85,6 @@ nav {
 }
 
 .nav__brand h1 {
-  color: var(--clr-black);
-
   font-family: "Signika";
   font-size: 1.5em;
   font-weight: 700;
@@ -84,7 +122,7 @@ header {
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
-  background-color: var(--clr-grey);
+  /* background-color: var(--clr-grey); */
   min-height: 50vh;
 
   position: relative;
@@ -93,7 +131,7 @@ header {
 
 .header__subtitle,
 .header__title {
-  color: var(--clr-black);
+  color: var(--text-heading);
   max-width: 450px;
 }
 
@@ -225,6 +263,110 @@ button {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
+/* --------------------------------
+   DARK MODE OVERRIDES for DRAWER
+----------------------------------*/
+
+/* Drawer container */
+.ant-drawer-content {
+  background: rgba(25, 27, 34, 0.7) !important;
+  backdrop-filter: blur(16px);
+  color: #d1d1d1 !important;
+}
+
+/* Input elements INSIDE drawer */
+.ant-drawer-content .app-input,
+.ant-drawer-content input {
+  background: rgba(255,255,255,0.06) !important;
+  color: #d1d1d1 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  border-radius: 8px !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.ant-drawer-content input::placeholder {
+  color: #8d8d8d !important;
+}
+
+/* Button inside drawer */
+.ant-drawer-content .header__button {
+  background: rgba(255,255,255,0.07) !important;
+  color: #d1d1d1 !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  transition: all .25s;
+}
+
+/* MODAL STYLES */
+/* ---------------------------------- */
+/* DARK MODE STYLES FOR ANT MODAL     */
+/* ---------------------------------- */
+
+.ant-modal-content {
+  background: rgba(25, 27, 34, 0.1) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 92, 246, 0.18); */
+    transition: all 0.3s ease;
+}
+
+.ant-modal-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.ant-modal-title {
+  color: #fafafa !important;
+  font-weight: 600;
+}
+
+.ant-modal-footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.ant-modal-close-x,
+.ant-modal-close-icon {
+  color: #fafafa !important;
+}
+
+/* ---------------------------------- */
+/*  INPUT & TEXT                        */
+/* ---------------------------------- */
+
+.ant-input-number,
+.ant-input-number-input {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #d1d1d1 !important;
+}
+
+.ant-input-number-input::placeholder {
+  color: #999 !important;
+}
+
+.ant-typography-secondary {
+  color: #a5a5a5 !important;
+}
+
+/* Make the Modal OK button match your custom ActionButton theme */
+.ant-modal .ant-btn-primary {
+  background: rgba(255, 255, 255, 0.07) !important;
+  color: #d1d1d1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.4),
+              inset 0 0 8px rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+  transition: all 0.25s ease;
+}
+
+.ant-modal .ant-btn-primary:hover:not(.ant-btn-disabled) {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.65);
+}
+
 
 
 /* ------------------------------------------------------ */

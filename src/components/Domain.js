@@ -20,6 +20,7 @@ import {
   CrownOutlined,
   DollarOutlined,
 } from "@ant-design/icons";
+import "./Domain.css";
 
 import ActionButton from "./ui/ActionButton/ActionButton";
 

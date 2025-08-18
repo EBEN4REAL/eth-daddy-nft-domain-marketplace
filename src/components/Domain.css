@@ -1,0 +1,48 @@
+.domain-card {
+  background: rgba(25, 27, 34, 0.6) !important; 
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.6),
+    0 0 30px rgba(139, 92, 246, 0.18); 
+  transition: all 0.3s ease;
+}
+
+.domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.65),
+    0 0 42px rgba(139, 92, 246, 0.35);
+}
+
+.domain-card .ant-card-head-title {
+  color: #fafafa !important;
+}
+
+.domain-card .ant-card-head,
+.domain-card .ant-card-body {
+  background: transparent !important;
+  color: #d1d1d1 !important;
+}
+
+.domain-card .ant-card-actions {
+  background: transparent !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.ant-card-head {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Force ANY nested text inside card body / header to be light */
+.domain-card,
+.domain-card * {
+  color: #d1d1d1 !important;
+  fill: #d1d1d1 !important; 
+}
+
+/* But give title a brighter color to stand out */
+.domain-card .ant-card-head-title {
+  color: #fafafa !important;
+}

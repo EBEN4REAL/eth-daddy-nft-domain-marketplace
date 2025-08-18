@@ -21,6 +21,10 @@ Note: This project is a learning/demo implementation and not affiliated with ENS
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 
+## Demo
+
+https://www.loom.com/share/823f5a98cd7c46dabdce4b29c49187ff
+
 ## Snapshots
 ![alt text](public/image-1.png)
 
